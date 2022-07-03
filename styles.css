@@ -11,6 +11,7 @@
 	--block-1-item-bg-color: #8ad191;
 	--block-2-bg-color: #88b5bf;
 	--block-2-item-bg-color: #0d89b0;
+	--popup-container-bg-color: rgba(0, 0, 0, 0.5);
 	--popup-bg-color: white;
 	--popup-close-bg-color: var(--header-bg-color);
 }
@@ -152,6 +153,21 @@
 
 .popup {
 	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: none;
+	background-color: var(--popup-container-bg-color);
+}
+
+.popup:target {
+	display: initial;
+}
+
+.popup__content {
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -159,7 +175,7 @@
 	width: 400px;
 	height: 400px;
 
-	display: none;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 
@@ -168,10 +184,6 @@
 	font-size: 53px;
 	line-height: 62px;
 	color: var(--popup-text-color);
-}
-
-.popup:target {
-	display: flex;
 }
 
 .popup__button-close {
